@@ -35,49 +35,16 @@ def fillMatrix(x,featureDistribution):
             index+=1
     return filled
 
-# This function only help for bayesian search
-def getMisrank(res, testlable):
-    size = len(testlable)
-    faultyvalues = []
-    correctvalues = []
-    for index in range(size):
-        sys.stdout.write(str(res[index][0])+" ")
-        if testlable[index][0] == 1:
-            faultyvalues.append(res[index][0])
-        elif testlable[index][0] == 0:
-            correctvalues.append(res[index][0])
-    print("")
-    misrank=1.0   # less, better
-    if len(faultyvalues) > 0:    # this version has buggy method
-        if size == len(faultyvalues):    # all methods in test data are buggy
-            misrank = 0.0
-        elif size > len(faultyvalues):
-            maxfaulty = max(faultyvalues)
-            correct = 0.0
-            for index in range(len(correctvalues)):
-                if correctvalues[index] < maxfaulty:
-                    correct = correct+1.0
-            misrank = 1 - correct/(size - len(faultyvalues))
-    return misrank
 
 # call this function to run 
 def run(trainFile, trainLabelFile, testFile, testLabelFile, groupFile, suspFile,featureDistribution, loss):
-
-    learning_rate = config.learning_rate
-    training_epochs = config.training_epochs
-    batch_size = config.batch_size
-    display_step = config.display_step
-    dump_step = config.dump_step
-    dropout_rate = config.dropout_rate
-    L2_value = config.L2_value
 
     # reset graph
     tf.reset_default_graph() 
     # Network Parameters
     n_input = numpy.array(featureDistribution).max()
     n_steps = len(featureDistribution)
-    #n_hidden = numpy.array(featureDistribution).max()
-    n_hidden = config.rnn_hidden              
+    n_hidden = numpy.array(featureDistribution).max()            
     n_classes = 2 # number of output classes
 
     # tf Graph input
@@ -142,6 +109,4 @@ def run(trainFile, trainLabelFile, testFile, testLabelFile, groupFile, suspFile,
             with open(suspFile+'-'+str(epoch+1),'w') as f:
                 for susp in res[:,0]:
                     f.write(str(susp)+'\n')
-        misrank = getMisrank(res,test_label)
         print("Optimization Finished!")
-        return misrank
