@@ -37,7 +37,7 @@ display_step = 10
 dump_step = 2
 dropout_rate = 0.9
 L2_value = 0.0001
-rnn_hidden=max(featureDistribution[0])
+rnn_hidden = max(featureDistribution)
 
                                                  
 train_file='Train.csv'
