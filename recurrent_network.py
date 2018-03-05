@@ -20,7 +20,7 @@ def RNN(x, weights, biases, n_hidden, n_steps, keep_prob):
     lstm_cell = tf.contrib.rnn.DropoutWrapper(lstm_cell, output_keep_prob=keep_prob)
     # Get lstm cell output
     outputs, states = rnn.static_rnn(lstm_cell, x, dtype=tf.float32)
-	# Linear activation, using rnn inner loop last output
+    # Linear activation, using rnn inner loop last output
     return tf.matmul(outputs[-1], weights['out']) + biases['out']
 
 
@@ -103,20 +103,20 @@ def run(trainFile, trainLabelFile, testFile, testLabelFile, groupFile, suspFile,
     accuracy = tf.reduce_mean(tf.cast(correct_pred, tf.float32))
 
     # load test data
-    datasets=input.read_data_sets(trainFile, trainLabelFile, testFile, testLabelFile, groupFile)
-	test_data=fillMatrix(datasets.test.instances,featureDistribution)
+    datasets = input.read_data_sets(trainFile, trainLabelFile, testFile, testLabelFile, groupFile)
+    test_data = fillMatrix(datasets.test.instances,featureDistribution)
     test_data = test_data.reshape((-1, n_steps, n_input))
     test_label = datasets.test.labels
         
     # Define loss and optimizer
-	variables  = tf.trainable_variables() 
+    variables  = tf.trainable_variables() 
     regularizer = tf.add_n([ tf.nn.l2_loss(v) for v in variables if 'bias' not in v.name]) * L2_value      # l2 regularization
-	cost = ut.loss_func(pred, y, loss, datasets, g)
+    cost = ut.loss_func(pred, y, loss, datasets, g)
     optimizer = tf.train.AdamOptimizer(learning_rate=learning_rate).minimize(cost+regularizer)
     # Initializing the variables
     init = tf.global_variables_initializer()
-	
-	# Launch the graph
+    
+    # Launch the graph
     with tf.Session() as sess:
         sess.run(init)
         step = 1
