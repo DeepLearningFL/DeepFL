@@ -21,8 +21,8 @@ def main():
         os.makedirs(susp_dir)
 
     l = losses.index(loss)   #get index of loss function
-	start_time = time.time()
-	susp_path = os.path.join(susp_dir, model + '-' + losses[l])
+    start_time = time.time()
+    susp_path = os.path.join(susp_dir, model + '-' + losses[l])
 
     if model == "rnn":
         myrnn.run(train_path,train_label_path, test_path,test_label_path, group_path, susp_path, featureDistribution, l)
