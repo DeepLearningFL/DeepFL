@@ -6,7 +6,7 @@ from tensorflow.contrib import rnn
 import numpy
 import input
 import time
-import config
+from config import *
 import utils as ut
 import sys
 
