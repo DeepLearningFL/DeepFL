@@ -12,16 +12,23 @@ import input
 import time
 import sys
                                                                                                                                                                      
-dir=sys.argv[1]      # The directory of dataset
-out_dir=sys.argv[2]  # The directory of results
-model = sys.argv[3]  # model name, such as "mlp" "mlp2" "rnn" "birnn"                          
-subs=['Time','Chart','Lang','Math','Mockito','Closure']
-vers=[27, 26, 65, 106, 38, 133]
+techNames = ['DeepFL', 'DeepFL-Spectrum', 'DeepFL-Mutation', 'DeepFL-Metrics', 'DeepFL-Textual']
+featureDistr = [[34,35,35,35,35,37,15], [35,35,35,35,37,15], [34,37,15], [34,35,35,35,35,15], [34,35,35,35,35,37]]
+featuresize = [226, 192, 86, 189, 211]
+losses = ['wsoftmax', 'softmax', 'epairwise','epairwiseSoftmax', 'hpairwise','hpairwiseSoftmax'] 
 
-dnns = [model]
-techs=['SpectrumTestJhawkByte']                                                                                                                 
-featureDistributions=[[34,35,35,35,35,37]]
-features=[211]
+dir = sys.argv[1]      # The directory of dataset
+out_dir = sys.argv[2]  # The directory of results
+sub = sys.argv[3]      # subject name: ['Time','Chart','Lang','Math','Mockito','Closure']
+v = sys.argv[4]  # version number
+model = sys.argv[5]  # model name, such as "mlp" "mlp2" "rnn" "birnn"  
+tech = sys.argv[6]  # technique name, such as DeepFL, DeepFL-Spectrum, DeepFL-Mutation, DeepFL-Metrics, DeepFL-Textual
+loss = sys.argv[7]  # loss function         
+
+featureDistribution = featureDistr[techNames.index(tech)]
+feature = featuresize[techNames.index(tech)]
+                                                                                                               
+
 
 learning_rate = 0.001
 training_epochs = 300
@@ -30,8 +37,8 @@ display_step = 10
 dump_step = 2
 dropout_rate = 0.9
 L2_value = 0.0001
-rnn_hidden=max(featureDistributions[0])
-losses=['wsoftmax', 'softmax', 'epairwise','epairwiseSoftmax', 'hpairwise','hpairwiseSoftmax']
+rnn_hidden=max(featureDistribution[0])
+
                                                  
 train_file='Train.csv'
 train_label_file='TrainLabel.csv'
