@@ -136,6 +136,7 @@ def run(trainFile, trainLabelFile, testFile, testLabelFile, groupFile, suspFile,
                     acc = sess.run(accuracy, feed_dict={x: batch_x, y: batch_y, g: batch_g, keep_prob:1.0})
                     # Calculate batch loss
                     loss = sess.run(cost, feed_dict={x: batch_x, y: batch_y, g: batch_g, keep_prob:1.0})
+                    print("Epoch " + str(epoch+1) + ", Minibatch Loss= " + "{:.6f}".format(loss))
             # write result        
             res=sess.run(tf.nn.softmax(pred),feed_dict={x: test_data, y: test_label, keep_prob:1.0})
             with open(suspFile+'-'+str(epoch+1),'w') as f:
