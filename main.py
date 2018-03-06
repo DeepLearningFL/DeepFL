@@ -13,6 +13,9 @@ def main():
     print(sub + '-' + v)
     train_path = os.path.join(dir,tech,sub,v,train_file)
     train_label_path = os.path.join(dir,tech,sub,v,train_label_file)
+    if tech == "CrossDeepFL":
+         train_path = os.path.join(dir,tech,sub+train_file)
+         train_label_path = os.path.join(dir,tech,sub+train_label_file)
     test_path = os.path.join(dir,tech,sub,v,test_file)
     test_label_path = os.path.join(dir,tech,sub,v,test_label_file)
     group_path = os.path.join(dir,tech,group_dir,sub,v,group_file)
