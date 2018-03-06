@@ -31,7 +31,7 @@ feature = featuresize[techNames.index(tech)]
 
 
 learning_rate = 0.001
-training_epochs = 300
+training_epochs = 170
 batch_size = 500
 display_step = 10
 dump_step = 2
