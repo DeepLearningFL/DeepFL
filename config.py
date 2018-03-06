@@ -14,7 +14,7 @@ import sys
                                                                                                                                                                      
 techNames = ['DeepFL', 'DeepFL-Spectrum', 'DeepFL-Mutation', 'DeepFL-Metrics', 'DeepFL-Textual', 'CrossDeepFL']
 featureDistr = [[34,35,35,35,35,37,15], [35,35,35,35,37,15], [34,37,15], [34,35,35,35,35,15], [34,35,35,35,35,37], [34,35,35,35,35,37,15]]
-featuresize = [226, 192, 86, 189, 211]
+featuresize = [226, 192, 86, 189, 211, 226]
 losses = ['wsoftmax', 'softmax', 'epairwise','epairwiseSoftmax', 'hpairwise','hpairwiseSoftmax'] 
 
 dir = sys.argv[1]      # The directory of dataset
