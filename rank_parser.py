@@ -152,8 +152,8 @@ def main():
     #Calculate overallresult
     CalculateOverall(resultBysub,truevers,techsvector)
     
-    for m in range(5,6):    #multric,fluccs,trapt,mlp...   
-          for sub in range(6,7):   # chart,time...overall
+    for m in range(0,4):    #loop mlp, mlp2,... 
+          for sub in range(0,7):   # chart,time...overall
               for metric in range(0,5):   # top1 top2...mar
                   sys.stdout.write(str(resultBysub[sub][m][metric])+" ")
               print('')
