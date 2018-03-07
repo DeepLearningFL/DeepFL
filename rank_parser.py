@@ -8,9 +8,10 @@ import sys
 
 DeepDataDir=sys.argv[1]
 ResultDir = sys.argv[2]   #directory of results
-tech = sys.argv[3]   # Tech names such as "DeepFL", "DeepFL-Spectrum"...
-loss = sys.argv[4]   # loss function
-epochnumber = sys.argv[5]   # loss function
+tech = sys.argv[3]     # Tech names such as "DeepFL", "DeepFL-Spectrum"...
+model = sys.argv[4]    # model name, such as "mlp" "mlp2" "rnn" "birnn"  
+loss = sys.argv[5]     # loss function   
+epochnumber = sys.argv[6]   # epoch number
 
 
 def initializeResult(allsub,tvector):
@@ -152,11 +153,11 @@ def main():
     #Calculate overallresult
     CalculateOverall(resultBysub,truevers,techsvector)
     
-    for m in range(0,4):    #loop mlp, mlp2,... 
-          for sub in range(0,7):   # chart,time...overall
-              for metric in range(0,5):   # top1 top2...mar
-                  sys.stdout.write(str(resultBysub[sub][m][metric])+" ")
-              print('')
+    m = dnns.index(model)
+    for sub in range(0,7):   # chart,time...overall
+        for metric in range(0,5):   # top1 top2...mar
+            sys.stdout.write(str(resultBysub[sub][m][metric])+" ")
+        print('')
 
 main()
 
