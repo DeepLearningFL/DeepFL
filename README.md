@@ -28,6 +28,13 @@ multi-layer perceptron with two hidden layer, recurrent neural network and Bidir
 6. tech: The different dimensions of features, corresponding to the name of dataset, can be DeepFL, DeepFL-Metrics, DeepFL-Mutation,
 DeepFL-Spectrum, DeepFL-Textual, CrossDeepFL
 7. loss: The name of loss function, which can be softmax, epairwise, epairwiseSoftmax
+## Results statistics##
+After running all subject versions, run the following command to calculate the five measurments Top-1, Top-3, Top-5, MFR, MAR:
+
+```
+python rank_parser.py /absolute/path/to/ParentDirofDataset /absolute/path/to/Result tech model loss epoch
+```
+
 
 
 
