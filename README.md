@@ -15,7 +15,7 @@ $ cd DeepFL
 ```
 
 ```
-$python main.py /absolute/path/to/ParentDirofDataset /absolute/path/to/Result subject version model tech loss
+$python main.py /absolute/path/to/ParentDirofDataset /absolute/path/to/Result subject version model tech loss epoch dump_step
 ```
 Each parameter can be explained as follows:
 1. /absolute/path/to/ParentDirofDataset: The absolute path of the parent directory including all datasets, for example, if the dataset is DeepFL, its directory can be /home/DeepLearningData/DeepFL ("/home/DeepLearningData/" is created by users, and "DeepFL" is put
@@ -28,6 +28,8 @@ multi-layer perceptron with two hidden layers, recurrent neural network and Bidi
 6. tech: The different dimensions of features, corresponding to the name of dataset, can be DeepFL, DeepFL-Metrics, DeepFL-Mutation,
 DeepFL-Spectrum, DeepFL-Textual, CrossDeepFL.
 7. loss: The name of loss function, which can be softmax, epairwise, epairwiseSoftmax.
+8. epoch: The number of training epochs.
+9. dupm_step: The number of epoch in which the result will be stored into the result file.
 
 ## Results statistics ##
 After running all subject versions, run the following command to calculate the five measurements Top-1, Top-3, Top-5, MFR, MAR:
