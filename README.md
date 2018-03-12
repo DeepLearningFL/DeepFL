@@ -8,7 +8,7 @@ DeepFL is a deep-learning-based fault localization technique. It implements two 
 ## DataSet ##
 The dataset can be downloaded from an online [Cloud Drive](https://mega.nz/#F!ffxXBISD!UQjggpnjw8oWrjSc0D7PdA). There are six .gz files, each of them represents one setting in our paper as follows:
 
-*DeepFL.tar.gz*: Dataset with all of four dimensions features above
+*DeepFL.tar.gz*: Dataset with all of four dimensions features above.
 
 *CrossDeepFL.tar.gz*: Dataset with all of four dimensions features in the cross-project scenario. 
 
