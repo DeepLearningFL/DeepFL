@@ -34,10 +34,10 @@ feature = featuresize[techNames.index(tech)]
 
 
 learning_rate = 0.001
-
+training_epochs = int(training_epochs)
 batch_size = 500
 display_step = 10
-
+dump_step = int(dump_step)
 dropout_rate = 0.9
 L2_value = 0.0001
 rnn_hidden = max(featureDistribution)
