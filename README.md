@@ -25,7 +25,9 @@ into it)
 4. version: The version number of the subject. Note that, the maximum numbers of subjects above are 27, 26, 65, 106, 38, 133.
 5. model: The implemented model name, which can be mlp, mlp2, rnn, birnn, representing multi-layer perceptron with one hidden layer,
 multi-layer perceptron with two hidden layer, recurrent neural network and Bidirectional recurrent neural network respectivly.
-6. tech: The different settings
+6. tech: The different dimensions of features, corresponding to the name of dataset, can be DeepFL, DeepFL-Metrics, DeepFL-Mutation,
+DeepFL-Spectrum, DeepFL-Textual, CrossDeepFL
+7. loss: The name of loss function, which can be softmax, epairwise, epairwiseSoftmax
 
 
 
