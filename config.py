@@ -23,7 +23,10 @@ sub = sys.argv[3]      # subject name: ['Time','Chart','Lang','Math','Mockito','
 v = sys.argv[4]  # version number
 model = sys.argv[5]  # model name, such as "mlp" "mlp2" "rnn" "birnn"  
 tech = sys.argv[6]  # technique name, such as DeepFL, DeepFL-Spectrum, DeepFL-Mutation, DeepFL-Metrics, DeepFL-Textual
-loss = sys.argv[7]  # loss function         
+loss = sys.argv[7]  # loss function 
+training_epochs = sys.argv[8]  # training epoch number
+dump_step = sys.argv[9] # the number of dumpresult
+
 
 featureDistribution = featureDistr[techNames.index(tech)]
 feature = featuresize[techNames.index(tech)]
@@ -31,10 +34,10 @@ feature = featuresize[techNames.index(tech)]
 
 
 learning_rate = 0.001
-training_epochs = 170
+
 batch_size = 500
 display_step = 10
-dump_step = 2
+
 dropout_rate = 0.9
 L2_value = 0.0001
 rnn_hidden = max(featureDistribution)
