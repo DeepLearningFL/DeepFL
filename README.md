@@ -29,8 +29,7 @@ multi-layer perceptron with two hidden layers, recurrent neural network and Bidi
 DeepFL-Spectrum, DeepFL-Textual, CrossDeepFL.
 7. loss: The name of loss function, which can be softmax, epairwise, epairwiseSoftmax.
 8. epoch: The number of training epochs.
-9. dupm_step: The number of epoch in which the result will be stored into the result file. For example, if the dump_step = 10, the
-result in epochs 10, 20, 30... will be written into the files.
+9. dupm_step: The interval number of epoch in which the result will be stored into the result file. For example, if the dump_step = 10, the results in epochs 10, 20, 30... will be written into the files.
 
 ## Results statistics ##
 After running all subject versions, run the following command to calculate the five measurements Top-1, Top-3, Top-5, MFR, MAR:
