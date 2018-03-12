@@ -90,7 +90,7 @@ def run(trainFile, trainLabelFile, testFile, testLabelFile, groupFile, suspFile,
         total_batch = int(datasets.train.num_instances/batch_size)
         res=[]
         for epoch in range(training_epochs):
-        	avg_cost = 0.
+            avg_cost = 0.
             # Loop over all batches
             for i in range(total_batch):
                 batch_x, batch_y, batch_g = datasets.train.next_batch(batch_size)
