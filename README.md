@@ -7,11 +7,17 @@ DeepFL is a deep-learning-based fault localization technique. It implements two 
 
 ## DataSet ##
 The dataset can be downloaded from an online [Cloud Drive](https://mega.nz/#F!ffxXBISD!UQjggpnjw8oWrjSc0D7PdA). There are six .gz files, each of them represents one setting in our paper as follows:
+
 DeepFL.tar.gz: Dataset with all of four dimensions features above
+
 CrossDeepFL.tar.gz: Dataset with all of four dimensions features in the cross-project scenario. 
+
 DeepFL-Spectrum.tar.gz: Dataset with three dimensions features, i.e.,mutation-based, complexity-based and textual-similarity-based information
+
 DeepFL-Mutation.tar.gz: Dataset with three dimensions features, i.e.,spectrum-based, complexity-based and textual-similarity-based information
+
 DeepFL-Metrics.tar.gz: Dataset with three dimensions features, i.e.,spectrum-based, mutation-based and textual-similarity-based information
+
 DeepFL-Textual.tar.gz: Dataset with three dimensions features, i.e.,spectrum-based, mutation-based and complexity-based information
 ## Running DeepFL ##
 The command to run DeepFL for each version is as follows:
@@ -27,7 +33,7 @@ Each parameter can be explained as follows:
 1. /absolute/path/to/ParentDirofDataset: The absolute path of the parent directory including all datasets, for example, if the dataset is DeepFL, its directory can be /home/DeepLearningData/DeepFL ("/home/DeepLearningData/" is created by users, and "DeepFL" is put
 into it)
 2. /absolute/path/to/Result: The directory of the results. 
-3. $subject: The subject name, which can be Time, Chart, Lang, Math, Mockito or Closure.
+3. $subject: The subject name, which can be *Time*, *Chart*, *Lang*, *Math*, *Mockito* or *Closure*.
 4. $version: The version number of the subject. Note that, the maximum numbers of subjects above are 27, 26, 65, 106, 38, 133, respectively.
 5. $model: The implemented model name, which can be mlp, mlp2, rnn, birnn, representing multi-layer perceptron with one hidden layer,
 multi-layer perceptron with two hidden layers, recurrent neural network and Bidirectional recurrent neural network respectively.
