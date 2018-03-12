@@ -154,13 +154,15 @@ def main():
     CalculateOverall(resultBysub,truevers,techsvector)
     
     m = dnns.index(model)
-    print("        Top-1   Top-3   Top-5   MFR      MAR")
-    for sub in range(0,7):   # chart,time...overall
+    print("        Top-1   Top-3   Top-5   MFR     MAR")
+    for sub in range(0,6):   # chart,time...
         sys.stdout.write(subs[sub]+"\t")
         for metric in range(0,5):   # top1 top2...mar
             sys.stdout.write(str(resultBysub[sub][m][metric])+"\t")
         print('')
-
+    sys.stdout.write("Overall" + "\t")
+    for metric in range(0,5):   # top1 top2...mar
+        sys.stdout.write(str(resultBysub[len(subs)][m][metric])+"\t")
 main()
 
 
