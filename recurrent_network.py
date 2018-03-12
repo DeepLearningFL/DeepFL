@@ -90,6 +90,7 @@ def run(trainFile, trainLabelFile, testFile, testLabelFile, groupFile, suspFile,
         total_batch = int(datasets.train.num_instances/batch_size)
         res=[]
         for epoch in range(training_epochs):
+        	avg_cost = 0.
             # Loop over all batches
             for i in range(total_batch):
                 batch_x, batch_y, batch_g = datasets.train.next_batch(batch_size)
@@ -97,13 +98,11 @@ def run(trainFile, trainLabelFile, testFile, testLabelFile, groupFile, suspFile,
                 batch_x = fillMatrix(batch_x,featureDistribution)
                 batch_x = batch_x.reshape((batch_size, n_steps, n_input))
                 # Run optimization 
-                sess.run(optimizer, feed_dict={x: batch_x, y: batch_y, g: batch_g, keep_prob:dropout_rate})
-                if epoch % display_step == 0 and i==(total_batch-1):
-                    # Calculate batch accuracy
-                    acc = sess.run(accuracy, feed_dict={x: batch_x, y: batch_y, g: batch_g, keep_prob:1.0})
-                    # Calculate batch loss
-                    loss = sess.run(cost, feed_dict={x: batch_x, y: batch_y, g: batch_g, keep_prob:1.0})
-                    print("Epoch " + str(epoch+1) + ", Minibatch Loss= " + "{:.6f}".format(loss))
+                _, c = sess.run([optimizer, cost], feed_dict={x: batch_x, y: batch_y, g: batch_g, keep_prob:dropout_rate})
+                # Compute average loss
+                avg_cost += c / total_batch
+            if epoch % display_step == 0 and i==(total_batch-1):
+                print("Epoch " + str(epoch+1) + ", Minibatch Loss= " + "{:.6f}".format(avg_cost))
             # write result        
             res=sess.run(tf.nn.softmax(pred),feed_dict={x: test_data, y: test_label, keep_prob:1.0})
             with open(suspFile+'-'+str(epoch+1),'w') as f:
