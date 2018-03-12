@@ -29,7 +29,7 @@ multi-layer perceptron with two hidden layer, recurrent neural network and Bidir
 DeepFL-Spectrum, DeepFL-Textual, CrossDeepFL
 7. loss: The name of loss function, which can be softmax, epairwise, epairwiseSoftmax.
 
-## Results statistics##
+## Results statistics ##
 After running all subject versions, run the following command to calculate the five measurments Top-1, Top-3, Top-5, MFR, MAR:
 
 ```
