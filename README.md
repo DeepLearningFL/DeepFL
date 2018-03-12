@@ -1,7 +1,7 @@
 # DeepFL
 DeepFL is a deep-learning-based fault localization technique. 
 
-The dataset is collected from real faults project [Defects4j](https://github.com/rjust/defects4j), including different dimensions of features, e.g., spectrum-based, mutation-based, complexity-based (code metrics) and textual-similarity-based features. The dataset can be downloaded from a online [Cloud Drive](https://mega.nz/#F!ffxXBISD!UQjggpnjw8oWrjSc0D7PdA). There are six .gz files, each of them represents one setting in our paper. For example, DeepFL.tar.gz is the data with four dimensions features above and CrossDeepFL.tar.gz is just in the cross-project scenario. DeepFL-XXX.tar.gz is the the data excluding one certain dimension, which has three dimensions features. For example, DeepFL-Metrics.tar.gz excludes complexity-based information. 
+The dataset is collected from real faults project [Defects4j](https://github.com/rjust/defects4j). Its features includes different dimensions of features, e.g., spectrum-based, mutation-based, complexity-based (code metrics) and textual-similarity-based features. The dataset can be downloaded from a online [Cloud Drive](https://mega.nz/#F!ffxXBISD!UQjggpnjw8oWrjSc0D7PdA). There are six .gz files, each of them represents one setting in our paper. For example, DeepFL.tar.gz is the data with four dimensions features above and CrossDeepFL.tar.gz is just in the cross-project scenario. DeepFL-XXX.tar.gz is the the data excluding one certain dimension, which has three dimensions features. For example, DeepFL-Metrics.tar.gz excludes complexity-based information. 
 
 DeepFL implements two multi-layer perceptron variants and two recurrent neural networks variants by [Tensorflow](https://www.tensorflow.org/).
 ## Requirements ##
@@ -27,7 +27,8 @@ into it)
 multi-layer perceptron with two hidden layer, recurrent neural network and Bidirectional recurrent neural network respectivly.
 6. tech: The different dimensions of features, corresponding to the name of dataset, can be DeepFL, DeepFL-Metrics, DeepFL-Mutation,
 DeepFL-Spectrum, DeepFL-Textual, CrossDeepFL
-7. loss: The name of loss function, which can be softmax, epairwise, epairwiseSoftmax
+7. loss: The name of loss function, which can be softmax, epairwise, epairwiseSoftmax.
+
 ## Results statistics##
 After running all subject versions, run the following command to calculate the five measurments Top-1, Top-3, Top-5, MFR, MAR:
 
