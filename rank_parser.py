@@ -162,7 +162,7 @@ def main():
         print('')
     sys.stdout.write("Overall" + "\t")
     for metric in range(0,5):   # top1 top2...mar
-        sys.stdout.write(str(resultBysub[len(subs)][m][metric])+"\t")
+        sys.stdout.write(str(resultBysub[len(subs)][m][metric]))
 main()
 
 
