@@ -12,13 +12,13 @@ The dataset can be downloaded from an online [Cloud Drive](https://mega.nz/#F!ff
 
 *CrossDeepFL.tar.gz*: Dataset with all of four dimensions features in the cross-project scenario. 
 
-*DeepFL-Spectrum.tar.gz*: Dataset with three dimensions features, i.e.,mutation-based, complexity-based and textual-similarity-based information
+*DeepFL-Spectrum.tar.gz*: Dataset with three dimensions features, i.e.,mutation-based, complexity-based and textual-similarity-based information.
 
-*DeepFL-Mutation.tar.gz*: Dataset with three dimensions features, i.e.,spectrum-based, complexity-based and textual-similarity-based information
+*DeepFL-Mutation.tar.gz*: Dataset with three dimensions features, i.e.,spectrum-based, complexity-based and textual-similarity-based information.
 
-*DeepFL-Metrics.tar.gz*: Dataset with three dimensions features, i.e.,spectrum-based, mutation-based and textual-similarity-based information
+*DeepFL-Metrics.tar.gz*: Dataset with three dimensions features, i.e.,spectrum-based, mutation-based and textual-similarity-based information.
 
-*DeepFL-Textual.tar.gz*: Dataset with three dimensions features, i.e.,spectrum-based, mutation-based and complexity-based information
+*DeepFL-Textual.tar.gz*: Dataset with three dimensions features, i.e.,spectrum-based, mutation-based and complexity-based information.
 ## Running DeepFL ##
 The command to run DeepFL for each version is as follows:
 
