@@ -102,7 +102,7 @@ def run(trainFile, trainLabelFile, testFile, testLabelFile, groupFile, suspFile,
                 # Compute average loss
                 avg_cost += c / total_batch
             if epoch % display_step == 0 and i==(total_batch-1):
-                print("Epoch " + str(epoch+1) + ", Minibatch Loss= " + "{:.6f}".format(avg_cost))
+                print("Epoch " + str(epoch+1) + ", cost = " + "{:.6f}".format(avg_cost))
             # write result        
             res=sess.run(tf.nn.softmax(pred),feed_dict={x: test_data, y: test_label, keep_prob:1.0})
             with open(suspFile+'-'+str(epoch+1),'w') as f:
