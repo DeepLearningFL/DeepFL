@@ -19,6 +19,8 @@ The dataset can be downloaded from an online [Cloud Drive](https://mega.nz/#F!ff
 *DeepFL-Metrics.tar.gz*: Dataset with three dimensions features, i.e.,spectrum-based, mutation-based and textual-similarity-based information.
 
 *DeepFL-Textual.tar.gz*: Dataset with three dimensions features, i.e.,spectrum-based, mutation-based and complexity-based information.
+
+Please uncompress .gz files and put them into a user-created folder which can be passed as a parameter for the following command.
 ## Running DeepFL ##
 The command to run DeepFL for each version is as follows:
 
