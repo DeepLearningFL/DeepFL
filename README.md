@@ -45,7 +45,7 @@ into it)
 After running all subject versions, run the following command to calculate the five measurements Top-1, Top-3, Top-5, MFR, MAR:
 
 ```
-python rank_parser.py /absolute/path/to/ParentDirofDataset /absolute/path/to/Result tech model loss epoch
+python rank_parser.py /absolute/path/to/ParentDirofDataset /absolute/path/to/Result $tech $model $loss $epoch
 ```
 Please note that due to the randomly initialized parameters, the results may be slightly different from our paper.
 
